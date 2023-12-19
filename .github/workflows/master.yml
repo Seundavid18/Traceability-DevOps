@@ -5,6 +5,7 @@ on:
     types: [opened, edited, closed]
     branches:
       - master
+      - dev
 
 jobs:
   alert:
