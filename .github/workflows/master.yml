@@ -11,10 +11,10 @@ jobs:
   alert:
     runs-on: ubuntu-latest
     steps:
-    - uses: danhellem/github-actions-pr-to-work-item@master
+    - uses: Seundavid18/github-actions-pr-to-work-item@master
       env:
         ado_token: '${{ secrets.ADO_PERSONAL_ACCESS_TOKEN }}'   
-        github_token: '${{ secrets.GH_TOKEN }}'    
+        github_token: '${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}'    
         ado_organization: 'TraceableTribe'
         ado_project: 'Agile'
         ado_wit: 'User Story' 
