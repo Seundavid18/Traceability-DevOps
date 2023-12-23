@@ -32,16 +32,7 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-    
-- task: GenerateReleaseNotes@0
-  inputs:
-    FromBuildId: "$(Build.BuildId)"
-    ToBuildId: "$(PreviousBuildId)"
-    ReleaseNotesPath: "GeneratedNotes"
-    ReleaseNotesFile: "ReleaseNotes.md"
-    AdditionalNote: '**Build Number: $(Build.BuildId)**'
-  env:
-    SYSTEM_ACCESSTOKEN: $(System.AccessToken)
+
 
 - task: XplatGenerateReleaseNotes@4
   inputs:
