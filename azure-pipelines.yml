@@ -41,3 +41,7 @@ steps:
     ReleaseNotesPath: 'GeneratedNotes'
     ReleaseNotesFile: 'ReleaseNotes.md'
     Test: false
+
+- task: CmdLine@2
+  inputs:
+    script: # string. Required. Script. 
