@@ -1,25 +1,16 @@
 name: Sync Pull Request to Azure Boards
-
-on:
-  pull_request_target:
-    types: [opened, edited, closed]
-    branches:
-      - master
-      - dev
-
-jobs:
-  alert:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: Seundavid18/github-actions-pr-to-work-item@master
-      env:
-        ado_token: '${{ secrets.ADO_PERSONAL_ACCESS_TOKEN }}'   
-        github_token: '${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}'    
-        ado_organization: 'TraceableTribe'
-        ado_project: 'Agile'
-        ado_wit: 'User Story' 
-        ado_new_state: 'New'
-        ado_active_state: 'Active'
-        ado_resolve_state: 'Resolved'
-        ado_close_state: 'Closed'
-        ado_area_path: 'optional_area_path\\optional_area_path'
+ uses: danhellem/github-actions-pr-to-work-item@1.2
+  with:
+    # Azure DevOps Personal Access Token
+    ado_token: '${{ secrets.ADO_PERSONAL_ACCESS_TOKEN }}' 
+    # Organization Name
+    ado_organization: 'TraceableTribe'
+    # Project Name
+    ado_project: 'Agile'
+    # Work Item Type (usually a custom work item type)
+    ado_wit: 'User Story'
+    # Closed State
+    ado_close_state: 'Closed'
+    # In Progress state that the PR will get set too after it is created
+    ado_active_state: 'Active'
+    ado_new_state: 'New'
