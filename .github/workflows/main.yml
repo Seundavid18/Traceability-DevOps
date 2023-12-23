@@ -1,4 +1,4 @@
-            - name: Sync Pull Requests to Azure Boards
+ name: Sync Pull Requests to Azure Boards
   # You may pin to the exact commit or the version.
   # uses: danhellem/github-actions-pr-to-work-item@8d7fabc966c6ffc0a195f83ecc5b9c63b2a07f35
   uses: danhellem/github-actions-pr-to-work-item@1.2
