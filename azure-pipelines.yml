@@ -42,3 +42,21 @@ steps:
     AdditionalNote: '**Build Number: $(Build.BuildId)**'
   env:
     SYSTEM_ACCESSTOKEN: $(System.AccessToken)
+
+- task: XplatGenerateReleaseNotes@4
+  inputs:
+    outputfile: '$(Build.ArtifactStagingDirectory)/releasenotes.md'
+    templateLocation: 'InLine'
+    inlinetemplate: |
+      # Release notes
+      ## Note for release
+    dumpPayloadToConsole: false
+    dumpPayloadToFile: false
+    replaceFile: True
+    getParentsAndChildren: False
+    getAllParents: False
+    getIndirectPullRequests: False
+    stopOnError: False
+    considerPartiallySuccessfulReleases: False
+    checkForManuallyLinkedWI: False
+    wiqlFromTarget: 'WorkItems'
