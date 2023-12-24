@@ -36,8 +36,8 @@ steps:
 
 - task: GenerateReleaseNotes@0
   inputs:
-    FromBuildId: '20231223.4'
-    ToBuildId: '20231223.5'
+    FromBuildId: '$(Build.BuildId)'
+    ToBuildId: '$(Build.BuildId)'
     ReleaseNotesPath: 'GeneratedNotes'
     ReleaseNotesFile: 'ReleaseNotes.md'
     Test: false
